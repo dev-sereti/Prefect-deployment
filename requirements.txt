@@ -1,0 +1,9 @@
+# Core pipeline dependencies
+pandas>=2.0.0
+openpyxl>=3.1.0
+sqlalchemy>=1.4.0,<2.1
+snowflake-sqlalchemy>=1.5.0
+snowflake-connector-python>=3.0.0
+
+# Prefect Cloud
+prefect>=2.19.0

@@ -1,0 +1,59 @@
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Log in to Prefect Cloud (paste your API key when prompted)
+prefect cloud login
+
+# 3. Create a Work Pool (one-time setup) - (Paid)
+
+Check if you have an existing pool
+prefect work-pool ls
+
+
+prefect work-pool create --type process teen-mental-health-pool 
+
+# Create a managed work pool (Free)
+prefect work-pool create --type prefect:managed teen-mental-health-pool 
+
+
+
+# 4. Register the deployment with 60-min schedule
+python deploy.py
+
+# 5. Start the worker that picks up and runs scheduled flows
+prefect worker start --pool teen-mental-health-pool
+
+
+
+Access denied.
+
+# Step 1: Create the new Prefect home on your B: drive
+New-Item -ItemType Directory -Force -Path "B:\Prefect\.prefect"
+
+# Step 2: Set the environment variable for this session
+$env:PREFECT_HOME = "B:\Prefect\.prefect"
+
+# Step 3: Verify it's set
+echo $env:PREFECT_HOME
+
+# Step 4: Login to Prefect Cloud
+prefect cloud login
+
+Make it permanent
+
+[System.Environment]::SetEnvironmentVariable("PREFECT_HOME", "B:\Prefect\.prefect", "User")
+
+
+
+
+# Install the new dependency
+pip install python-dotenv
+
+# Store all 7 credentials in Prefect Cloud (one-time)
+prefect secret set snowflake-account
+prefect secret set snowflake-user
+prefect secret set snowflake-password
+prefect secret set snowflake-database
+prefect secret set snowflake-schema
+prefect secret set snowflake-warehouse
+prefect secret set snowflake-role
