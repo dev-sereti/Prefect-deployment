@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     source = GitRepository(
         url="https://github.com/dev-sereti/Prefect-deployment.git",
-        branch="dev",   # <- FIXED
+        branch="dev",   # <- For production, consider using a specific tag or commit hash instead of a branch
     )
 
     teen_mental_health_pipeline.from_source(
