@@ -112,7 +112,7 @@ def get_engine():
 # 
 
 @task(
-    name="Extract — Download Excel from SharePoint",
+    name="Extract Download Excel from SharePoint",
     retries=2,
     retry_delay_seconds=15
 )
