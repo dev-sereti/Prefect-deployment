@@ -33,7 +33,6 @@ if __name__ == "__main__":
         tags=["etl", "snowflake", "mental-health"],
         description="Loads teen mental health data from Excel into Snowflake every 60 minutes.",
     )
-
     print("\n Deployment registered on Prefect Cloud!")
     print("   → View & trigger runs at: https://app.prefect.io")
     print("   → No local worker needed — default-work-pool is managed by Prefect")
